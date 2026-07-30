@@ -11,4 +11,9 @@
 
 Pushing a `v*` tag triggers `.github/workflows/publish.yml`, which verifies the tag
 matches `package.json`, builds, tests, publishes to npm with provenance
-(`--provenance`), and creates a GitHub Release. Requires the `NPM_TOKEN` secret.
+(`--provenance`), and creates a GitHub Release.
+
+Publishing authenticates via **npm Trusted Publishing (OIDC)** — no `NPM_TOKEN`
+secret is required. npm is configured to trust `OO1kBOT/001k-cli` running
+`publish.yml`, and the workflow's `id-token: write` permission supplies the
+short-lived credential.

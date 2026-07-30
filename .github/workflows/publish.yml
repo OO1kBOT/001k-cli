@@ -35,10 +35,10 @@ jobs:
       - run: npm run build
       - run: npm run test:coverage
 
+      # Authenticates via OIDC (npm Trusted Publishing) — no NPM_TOKEN needed.
+      # Requires the `id-token: write` permission declared above.
       - name: Publish to npm (public, with provenance)
         run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/')

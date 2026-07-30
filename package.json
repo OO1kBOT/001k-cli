@@ -1,0 +1,58 @@
+{
+  "name": "001k-cli",
+  "version": "1.0.0",
+  "description": "CLI and AI-agent skill for 001k.bot — deposits, withdrawals, swaps, transfers, limit orders, and AML checks",
+  "bin": {
+    "001k": "./dist/cli.js"
+  },
+  "files": [
+    "dist/",
+    "NOTICE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OO1kBOT/001k-cli.git"
+  },
+  "homepage": "https://github.com/OO1kBOT/001k-cli#readme",
+  "bugs": {
+    "url": "https://github.com/OO1kBOT/001k-cli/issues"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "dev": "tsx src/cli.ts",
+    "typecheck": "tsc -p tsconfig.test.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "prepublishOnly": "npm run clean && npm run build",
+    "version": "node scripts/sync-version.mjs && git add skills"
+  },
+  "keywords": [
+    "001k",
+    "api",
+    "cli",
+    "fintech",
+    "agent",
+    "skill"
+  ],
+  "author": {
+    "name": "001k bot",
+    "url": "https://001k.bot"
+  },
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@vitest/coverage-v8": "^4.1.10",
+    "tsx": "^4.23.1",
+    "typescript": "7.0.2",
+    "vitest": "^4.1.10"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}

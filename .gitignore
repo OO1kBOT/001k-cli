@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.env
+.001k/
+*.tgz
+.claude
+.agents
+skills-lock.json
+
+# IDE / editor
+.idea/
+.vscode/
+*.iml
+.DS_Store
+TASKS.md
+coverage
+scratchpad/

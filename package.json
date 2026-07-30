@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "CLI and AI-agent skill for 001k.bot — deposits, withdrawals, swaps, transfers, limit orders, and AML checks",
   "bin": {
-    "001k": "./dist/cli.js"
+    "001k": "dist/cli.js"
   },
   "files": [
     "dist/",
